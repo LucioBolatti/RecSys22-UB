@@ -1,5 +1,5 @@
 ## TRABAJO FINAL DATA SCIENCE - UNIVERSITAT DE BARCELONA
-##
+
 ## Integrantes: Joan Orellana Rios - Lucio Fabián Bolatti Fernández - Oriol Gilbert
 
 En este GitHub Page describimos nuestro trabajo final de curso . El mismo se basa en el RecSys Challenge 2022 (http://recsyschallenge.com/2022), usando los mismos data sets y scorings del challenge.
