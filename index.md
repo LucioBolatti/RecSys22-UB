@@ -13,12 +13,91 @@ Dado que el trabajo abordado se trata de sesiones de compras de diversos product
 
 Dicho proceso y su correspondiente documentación se puede encontrar en el código "Intento de Arbol de Clasificación - Documentado" en el repositorio de este trabajo.
 
-Lamentablemente no se otubieron buenos resultados con este proceso, por lo cual se decidió descartarlo y proceder a realizar un Coultering.
+Lamentablemente no se otubieron buenos resultados con este proceso, por lo cual se decidió descartarlo y proceder a realizar un Clustering.
 
 
 ### Análisis de las Componentes Principales (PCA)
 
-El primer
+Previo a la realización del Clustering, se realiza un Análisis de las Componenetes Principales (PCA por sus siglas en inglés). Esto permite reducir la dimensionalidad de los datos, es decir sus características (features). De esta manera se logra reducir la complexidad del problema (para el algoritmo) y los tiempos de cómputo.
+
+El resultado obtenido fue de 16 componentes las cuales consiguen mantener un porcentaje de varianza explicada acumulada del casi el 90%.
+
+El proceso realizado en detalle y correspondiente documentación se puede en el código "PCA_Seleccion_Numero_Componentes" en el repositorio de este trabajo.
+
+
+
+### Clustering
+
+A partir del resultado del PCA (16 componenetes principales) de realiza un clustering de los datos con diversos métodos.
+
+Luego de varios intentos y análisis, se obtuvo como mejor resultado un total de 4 clusters, que se utilizan para los posteriores pasos.
+
+El detalle de esto y su correspondiente documentación se puede en el código "clustering_features" en el repositorio de este trabajo.
+
+
+### Feature Engineering
+
+Además de la información proporcionada por el Clustering, se realizó un Feature Engineering para obtener otra información relevante para el entrenamiento del modelo.
+
+En primer lugar se tiene información determinada a criterio de los integrantes del grupo, y se trata de la siguente:
+
+- Primer producto visto en la sesión
+- Momento en el que el primer producto es visto
+- Último producto visto en la sesión
+- Momento en el que el último producto es visto
+- Duración total de la sesión
+- Tiempo promedio utilizado en cada producto
+- Período del día en el cual la sesión comenzó (madrugada, día, tarde o noche)
+
+
+#### Purchases
+
+Con respecto a los datos de las compras, se extrajo el item comprado y la hora de la compra.
+
+#### Features
+
+Por otra parte, de cada sesión se determinó:
+
+- Veces que se vió cada cluster
+- Cluster más visto
+
+#### Combinación de todos los datos
+
+Por último, se combió todo lo anterior en un mismo dataset que, luego de algunos procesamientos más, es el utilizado como información de entrada para el entrenamiento del modelo.
+
+
+### División en Train y Test
+
+Previo a realizar los siguientes procesamiento de los datos, se realiza la división en train y test.
+
+
+### Preparación de los Datos para los Algoritmos de Machine Learning
+
+Para poder utilizar el dataset en el entramiento del modelo, es necesario realizar una serie de procesamientos con las variables categóricas, para lo cual se realizó un Ordinal Encoder y un Pipeline
+
+COREGIRRRRRRRRRRRRRRRRR
+
+### Entrenamiento y Selección del Modelo
+
+Una vez listo el data set, se pasó al entramiento y selección del mejor modelo. Para ello se entrenaron divsersos modelos, los cuales son:
+
+- SGD CLassifier
+- Decision Tree
+- K-nearest Neighbour
+- SVC
+- Random Forest Classifier
+
+Una vez entrenados todos los modelos listados, se utiliza el método de la media recíproca para determinar cual es el mejor, ya que este es el método utilizado en el chalenge.
+
+Como resultado, se determina que el mejor modelo a utilizar es el Random Forest Classifier, y con el cual se trabajó en los pasos posteriores.
+
+
+
+
+Todo esto (y pasos posteriores) en detalle y su correspondiente documentación se puede en el código "ALL_Joan" en el repositorio de este trabajo.
+
+
+
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
