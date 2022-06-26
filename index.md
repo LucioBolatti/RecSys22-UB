@@ -91,11 +91,25 @@ Una vez entrenados todos los modelos listados, se utiliza el método de la media
 
 Como resultado, se determina que el mejor modelo a utilizar es el Random Forest Classifier, y con el cual se trabajó en los pasos posteriores.
 
+### Mejores Parámetros
+
+VER QUE PONER ACAAAAAA
+
+### Feature Importance
+
+VER QUE PONER ACAAAAA
+
+### Generación del archivo Test Submission
+
+Por último, utilizando el modelo descripto y todo lo anterior, se analiza el dataset de "test_final", y se genera el archivo de entrega "final_submission", el cual es el resultado final de este trabajo.
+
+
+Todo esto en detalle y su correspondiente documentación se puede en el código "ALL_Joan" en el repositorio de este trabajo.
 
 
 
-Todo esto (y pasos posteriores) en detalle y su correspondiente documentación se puede en el código "ALL_Joan" en el repositorio de este trabajo.
 
+---------------------------------------------------------------------------------------------------------------
 
 
 
