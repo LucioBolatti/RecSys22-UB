@@ -2,7 +2,7 @@
 ##
 ## Integrantes: Joan Orellana Rios - Lucio Fabián Bolatti Fernández - Oriol Gilbert
 
-En este GitHub Page describimos nuestro trabajo final de curso realizado. El mismo se base en el RecSys Challenge 2022 (http://recsyschallenge.com/2022), usando los mismos data sets y scorings del challenge.
+En este GitHub Page describimos nuestro trabajo final de curso . El mismo se basa en el RecSys Challenge 2022 (http://recsyschallenge.com/2022), usando los mismos data sets y scorings del challenge.
 
 
 ### Primer Análisis de los Datos e Intento de Armado de Arbol de Categorías
