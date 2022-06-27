@@ -26,7 +26,7 @@ El reto<a name="ref-1"></a>[<sup>[1]</sup>](#ref-1) que presenta Dressipi y que 
 
 Los datos de contenido consisten en etiquetas descriptivas de los artículos (como el color, la longitud, el escote, el estilo de las mangas, etc.). Las etiquetas se han asignado mediante el sistema human-in-the-loop de Dressipi, en el que expertos en moda revisan, corrigen y confirman la corrección de las etiquetas, por lo que los datos que presentas son datos de gran precisión y calidad. 
 
-![SesionRopaImagen.png](Image_Sessios_User_Example.png "Fig. 1: Ejemplo de datos de sesión y compra")
+![SesionRopaImagen.png](Images/Image_Sessios_User_Example.png)
 
 
 
@@ -58,12 +58,11 @@ a parte de estos dos puntos, salen 3 definiciones de vital importancia:
     * ```feature_value_id```
     
 
-
+![Ejemplo caracteristicas](Images/Image_Features_of_Items.png)
 
 
 La imagen siguiente no es mas que una simple ilustración de cómo podrían ser los datos de caracteristicas de un vestido determinado. En el conjunto de datos, los datos de las etiquetas se han anonimizado mediante el uso de identificadores: en este caso, no obtendremos las etiquetas de texto claro como "escote: cuello de V/pico", sino identificadores que representan los mismos datos.
 
-![Ejemplo caracteristicas](Image_Features_of_Items.png "Fig. 1: Ejemplo de datos de sesión y compra")
 
 
 ### 2. Análisis descriptivo
@@ -82,6 +81,8 @@ En cualquier proyecto analítico, un mínimo de análisis descriptivo es requeri
 | **Non-Null Count** | non-null | non-null       | non-null    |
 | **Dtype**   | int64      | int64            | int64        |
 
+
+![](Images/Image_FeaturesStats.png)
 
 
 ##### Footnotes
