@@ -101,17 +101,17 @@ Comenzamos realizando un primer análisis de los datos, a partir del cual decidi
 
 Dado que el trabajo abordado se trata de sesiones de compras de diversos productos, y categorías de estos productos, pensamos en los arboles de categorías que se suelen encontrar en la mayoría de las páginas de compras. A continuación se muestra un esquema que representan dicho arbol de categorías:
 
-![Esquema Arbol de Categorías](Images/Esquema Arbol de Categorías.png)
+![Esquema_Arbol_de_Categorías](Images/Esquema Arbol de Categorías.png)
 
 De esta manera, si lográramos recontruir dicho arbol de categorías a partir de los datos, se tendría una buena categorización de los items, la cual se podría utilizar en el entrenamiento de un modelo. Esto se podría representar de la siguiente manera:
 
-![Arbol de Categoría como Clustering](Images/Arbol de Categoría como Clustering.png)
+![Arbol_de_Categoría_como_Clustering](Images/Arbol de Categoría como Clustering.png)
 
 Dicho proceso y su correspondiente documentación se puede encontrar en el código "Intento de Arbol de Clasificación - Documentado" en el repositorio de este trabajo.
 
 Lamentablemente no se otubieron buenos resultados con este proceso, por lo cual se decidió descartarlo y proceder a realizar un Clustering. A continuación se muestra los resultados parciales, los cuales no poseen las características deseadas para un arbol de categorías descripto inicialmente.
 
-![Resultado Parcial Arbol de Categorías](Images/Resultado Parcial Arbol de Categorías.png)
+![Resultado_Parcial_Arbol_de_Categorías](Images/Resultado Parcial Arbol de Categorías.png)
 
 
 ### 4. Análisis de las Componentes Principales (PCA)
