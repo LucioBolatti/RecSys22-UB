@@ -118,7 +118,9 @@ Lamentablemente no se otubieron buenos resultados con este proceso, por lo cual 
 
 Previo a la realización del Clustering, se realiza un Análisis de las Componenetes Principales (PCA por sus siglas en inglés). Esto permite reducir la dimensionalidad de los datos, es decir sus características (features). De esta manera se logra reducir la complexidad del problema (para el algoritmo) y los tiempos de cómputo.
 
-El resultado obtenido fue de 16 componentes las cuales consiguen mantener un porcentaje de varianza explicada acumulada del casi el 90%.
+El resultado obtenido fue de 16 componentes las cuales consiguen mantener un porcentaje de varianza explicada acumulada del casi el 90%, como se puede ver en el siguente gráfico:
+
+![PCA_Porcentaje_Varianza_Explicada](Images/PCA_Porcentaje_Varianza_Explicada.png)
 
 El proceso realizado en detalle y correspondiente documentación se puede en el código "PCA_Seleccion_Numero_Componentes" en el repositorio de este trabajo.
 
@@ -128,12 +130,14 @@ El proceso realizado en detalle y correspondiente documentación se puede en el 
 
 A partir del resultado del PCA (16 componenetes principales) de realiza un clustering de los datos con diversos métodos.
 
-Luego de varios intentos y análisis, se obtuvo como mejor resultado un total de 4 clusters, que se utilizan para los posteriores pasos.
+Luego de varios intentos y análisis, se obtuvo como mejor resultado un total de 4 clusters, que se utilizan para los posteriores pasos. Esto se puede ver graficamente en la siguiente imagen:
+
+![Resultados_Clustering](Images/Resultados_Clustering.PNG)
 
 El detalle de esto y su correspondiente documentación se puede en el código "clustering_features" en el repositorio de este trabajo.
 
 
-### 6. Feature Engineering
+### 6. Feature Engineering (REVISARRRRRR)
 
 Además de la información proporcionada por el Clustering, se realizó un Feature Engineering para obtener otra información relevante para el entrenamiento del modelo.
 
@@ -148,18 +152,18 @@ En primer lugar se tiene información determinada a criterio de los integrantes 
 - Período del día en el cual la sesión comenzó (madrugada, día, tarde o noche)
 
 
-#### 6.1. Purchases
+#### 6.1. Purchases (REVISARRRRRR)
 
 Con respecto a los datos de las compras, se extrajo el item comprado y la hora de la compra.
 
-#### 6.2. Features
+#### 6.2. Features (REVISARRRRRR)
 
 Por otra parte, de cada sesión se determinó:
 
 - Veces que se vió cada cluster
 - Cluster más visto
 
-#### 6.3 Combinación de todos los datos
+#### 6.3 Combinación de todos los datos (REVISARRRRRR)
 
 Por último, se combió todo lo anterior en un mismo dataset que, luego de algunos procesamientos más, es el utilizado como información de entrada para el entrenamiento del modelo.
 
@@ -169,7 +173,7 @@ Por último, se combió todo lo anterior en un mismo dataset que, luego de algun
 Previo a realizar los siguientes procesamiento de los datos, se realiza la división en train y test.
 
 
-### 8. Preparación de los Datos para los Algoritmos de Machine Learning
+### 8. Preparación de los Datos para los Algoritmos de Machine Learning (REVISARRRRRR)
 
 Para poder utilizar el dataset en el entramiento del modelo, es necesario realizar una serie de procesamientos con las variables categóricas, para lo cual se realizó un Ordinal Encoder y un Pipeline
 
@@ -187,17 +191,19 @@ Una vez listo el data set, se pasó al entramiento y selección del mejor modelo
 
 Una vez entrenados todos los modelos listados, se utiliza el método de la media recíproca para determinar cual es el mejor, ya que este es el método utilizado en el chalenge.
 
-Como resultado, se determina que el mejor modelo a utilizar es el Random Forest Classifier, y con el cual se trabajó en los pasos posteriores.
+Como resultado, se determina que el mejor modelo a utilizar es el Random Forest Classifier, y con el cual se trabajó en los pasos posteriores. En la siguente tabla se resumen los resultados obtenidos:
 
-### 10. Mejores Parámetros
+![Resultados_Test_Modelos.PNG](Images/Resultados_Test_Modelos.PNG)
+
+### 10. Mejores Parámetros (REVISARRRRRR)
 
 VER QUE PONER ACAAAAAA
 
-### 11. Feature Importance
+### 11. Feature Importance (REVISARRRRRR)
 
 VER QUE PONER ACAAAAA
 
-### 12. Generación del archivo Test Submission
+### 12. Generación del archivo Test Submission (REVISARRRRRR)
 
 Por último, utilizando el modelo descripto y todo lo anterior, se analiza el dataset de "test_final", y se genera el archivo de entrega "final_submission", el cual es el resultado final de este trabajo.
 
@@ -205,7 +211,7 @@ Por último, utilizando el modelo descripto y todo lo anterior, se analiza el da
 Todo esto en detalle y su correspondiente documentación se puede en el código "ALL_Joan" en el repositorio de este trabajo.
 
 
-
+## Conclusiones (REVISARRRRRR)
 
 ---------------------------------------------------------------------------------------------------------------
 
