@@ -86,8 +86,8 @@ Representando casi 5M de registos totales. Esta cantidad es entonces un buen num
 
 Siguiedo con las distribuciones, podemos ver que:
 * Las compras se realizan en mayor medida durante la tarde-noche. 
-* La categorias mas comunes son la 47, 46 50 y 68. Por la cola econtramos las 9,13 y 27. Esto nos da a entender que cuanto más _común_ o _popular_ sea la caracteristica entre los items, menos determinara el objeto. Asimismo, cuanto más singular sea esa característica entre los items, más determinar el tipo de prenda/item.
-* Se observan muchos items con muchas carctristicas y muchos item con categorias muy pocas categorias
+* La categorias más comunes son la 47, 46 50 y 68. Por la cola econtramos las 9,13 y 27. Esto nos da a entender que cuanto más _común_ o _popular_ sea la caracteristica entre los items, menos determinara el objeto. Asimismo, cuanto más singular sea esa característica entre los items, más determinar el tipo de prenda/item.
+* Se observa usuarios que buscan prendas muy elaboradas (sesiones con items complejos - muchas categorias por item-) y muchos usuarios con prendas menos elabroadas, con esto podemos ver un poco el perfil del usuario para determiar un poco hacia donde van los tiros en cuanto a items a predecir.
 
 
 
