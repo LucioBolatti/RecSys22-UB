@@ -1,8 +1,8 @@
 ## TRABAJO FINAL DATA SCIENCE - UNIVERSITAT DE BARCELONA
 
-## Integrantes: Joan Orellana Rios - Lucio Fabián Bolatti Fernández - Oriol Gilbert
+> #### Integrantes: Joan Orellana Rios - Lucio Fabián Bolatti Fernández - Oriol Gilbert
 
-En este GitHub Page describimos nuestro trabajo final de curso . El mismo se basa en el RecSys Challenge 2022 (http://recsyschallenge.com/2022), usando los mismos data sets y scorings del challenge.
+> *__Nota__: En este GitHub Page describimos nuestro trabajo final de curso . El mismo se basa en el RecSys Challenge 2022 (http://recsyschallenge.com/2022), usando los mismos data sets y scorings del challenge.*
 
 ### Resumen:
 
@@ -16,7 +16,7 @@ En el presente trabajo, ajustamos un modelo (o _x_ modelos) para predecir los 10
 
 #### 1.1 ¿Por qué escogimos este proyecto?
 
-En el presente curso, a los estudiantes se nos presento la oportunidad de escoger entre varias proyectos con los que demostrar nuestras hablidades. Nosotros, escogimos un proyecto presentado por [Dressipi](https://dressipi.com)<a name="fn-1"></a>[<sup>[1]</sup>](#fn-1) el cual nos presentaba un reto interesante, pues seria nuestro primer sistema de recomendacion basado en machine learning.  
+En el presente curso, a los estudiantes se nos presento la oportunidad de escoger entre varias proyectos con los que demostrar nuestras hablidades. Nosotros, escogimos un proyecto presentado por [Dressipi](https://dressipi.com)<a name="fn-1"></a>[<sup>[1]</sup>](#fn-1) el cual nos presentaba un reto interesante, pues seria nuestro primer sistema de recomendacion basado en modelos de machine learning.  
 
 
 
@@ -58,10 +58,11 @@ a parte de estos dos puntos, salen 3 definiciones de vital importancia:
     * ```feature_value_id```
     
 
-![Ejemplo caracteristicas](Images/Image_Features_of_Items.png)
-
 
 La imagen siguiente no es mas que una simple ilustración de cómo podrían ser los datos de caracteristicas de un vestido determinado. En el conjunto de datos, los datos de las etiquetas se han anonimizado mediante el uso de identificadores: en este caso, no obtendremos las etiquetas de texto claro como "escote: cuello de V/pico", sino identificadores que representan los mismos datos.
+
+![Ejemplo caracteristicas](Images/Image_Features_of_Items.png)
+
 
 
 
@@ -84,16 +85,6 @@ En cualquier proyecto analítico, un mínimo de análisis descriptivo es requeri
 
 ![](Images/Image_FeaturesStats.png)
 
-
-##### Notas
-
-<a name="fn-1"></a>1. [^](#fn-1) _Dressipi_ es un experto en inteligencia artificial de la moda que ofrece recomendaciones de productos y ropa a los principales minoristas del mundo. Sus recomendaciones permiten a los minoristas crear nuevas experiencias de descubrimiento de productos que son personalizadas e inspiradoras y que pueden utilizarse en todos los pasos del recorrido del comprador. Comentan que sus algoritmos permiten a los minoristas tomar mejores decisiones de compra y comercialización al prever con mayor precisión la demanda de productos y las proporciones de tamaño. En tal caso, su objetivo es ofrecer las mejores recomendaciones y predicciones de ropa del mundo. Dressipi trabaja con marcas de Estados Unidos, Reino Unido, Europa y Australia.
-
-
-##### Referencias
-
-
-<a name="ref-1"></a>\[1\].  [^](#ref-1) [RecSys Challenge 2022](http://www.recsyschallenge.com/2022/), Dressipi, Bruce Ferwerda (Jönköping University, Sweden), Saikishore Kalloori (ETH Zürich, Switzerland), and Abhishek Srivastava (IIM Jammu, India).
 
 ### 3. Primer Análisis de los Datos e Intento de Armado de Arbol de Categorías
 
@@ -214,6 +205,40 @@ Todo esto en detalle y su correspondiente documentación se puede en el código 
 ## Conclusiones (REVISARRRRRR)
 
 ---------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+##### Notas
+
+<a name="fn-1"></a>1. [^](#fn-1) _Dressipi_ es un experto en inteligencia artificial de la moda que ofrece recomendaciones de productos y ropa a los principales minoristas del mundo. Sus recomendaciones permiten a los minoristas crear nuevas experiencias de descubrimiento de productos que son personalizadas e inspiradoras y que pueden utilizarse en todos los pasos del recorrido del comprador. Comentan que sus algoritmos permiten a los minoristas tomar mejores decisiones de compra y comercialización al prever con mayor precisión la demanda de productos y las proporciones de tamaño. En tal caso, su objetivo es ofrecer las mejores recomendaciones y predicciones de ropa del mundo. Dressipi trabaja con marcas de Estados Unidos, Reino Unido, Europa y Australia.
+
+
+##### Referencias
+
+
+<a name="ref-1"></a>\[1\].  [^](#ref-1) [RecSys Challenge 2022](http://www.recsyschallenge.com/2022/), Dressipi, Bruce Ferwerda (Jönköping University, Sweden), Saikishore Kalloori (ETH Zürich, Switzerland), and Abhishek Srivastava (IIM Jammu, India).
+
+
+
+
+
+
+
+<br>
+
+<br>
+
+<br>
+
+
+<br>
+
+<br>
+
+<br>
+
 
 
 
