@@ -89,7 +89,7 @@ Siguiedo con las distribuciones, podemos ver que:
 * La categorias más comunes son la 47, 46 50 y 68. Por la cola econtramos las 9,13 y 27. Esto nos da a entender que cuanto más _común_ o _popular_ sea la caracteristica entre los items, menos determinara el objeto. Asimismo, cuanto más singular sea esa característica entre los items, más determinar el tipo de prenda/item.
 * Se observa usuarios que buscan prendas muy elaboradas (sesiones con items complejos - muchas categorias por item-) y muchos usuarios con prendas menos elabroadas, con esto podemos ver un poco el perfil del usuario para determiar un poco hacia donde van los tiros en cuanto a items a predecir.
 
-
+> *__Nota__: Podéis encontrar más detalle sobre este apartado en el notebook "1_Analisis_Exploratorio_de_Datos" en el repositorio de este trabajo.*
 
 <br>
 
@@ -105,11 +105,13 @@ De esta manera, si lográramos recontruir dicho arbol de categorías a partir de
 
 ![Arbol_de_Categoría_como_Clustering](Images/Arbol_Categoría_como_Clustering.png)
 
-Dicho proceso y su correspondiente documentación se puede encontrar en el código "Intento de Arbol de Clasificación - Documentado" en el repositorio de este trabajo.
+
 
 Lamentablemente no se otubieron buenos resultados con este proceso, por lo cual se decidió descartarlo y proceder a realizar un Clustering. A continuación se muestra los resultados parciales, los cuales no poseen las características deseadas para un arbol de categorías descripto inicialmente.
 
 ![Resultado_Parcial_Arbol_de_Categorías](Images/Resultado_Parcial_Arbol_Categorías.png)
+
+>_**Nota**: Podéis encontrar más detalle con la correspondiente documentación en el siguente notebook: "Intento de Arbol de Clasificación - Documentado" en el repositorio de este trabajo_.
 
 <br>
 
@@ -121,7 +123,7 @@ El resultado obtenido fue de 16 componentes las cuales consiguen mantener un por
 
 ![PCA_Porcentaje_Varianza_Explicada](Images/PCA_Porcentaje_Varianza_Explicada.png)
 
-El proceso realizado en detalle y correspondiente documentación se puede en el código "PCA_Seleccion_Numero_Componentes" en el repositorio de este trabajo.
+>_**Nota**: Podéis encontrar más detalle con la correspondiente documentación en el siguente notebook: "PCA_Seleccion_Numero_Componentes" en el repositorio de este trabajo._
 
 
 <br>
@@ -134,7 +136,7 @@ Luego de varios intentos y análisis, se obtuvo como mejor resultado un total de
 
 ![Resultados_Clustering](Images/Resultados_Clustering.PNG)
 
-El detalle de esto y su correspondiente documentación se puede en el código "clustering_features" en el repositorio de este trabajo.
+>_**Nota**: Podéis encontrar más detalle con la correspondiente documentación en el siguente notebook: "clustering_features" en el repositorio de este trabajo._
 
 <br>
 
