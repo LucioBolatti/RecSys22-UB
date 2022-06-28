@@ -64,27 +64,34 @@ La imagen siguiente no es mas que una simple ilustración de cómo podrían ser 
 ![Ejemplo caracteristicas](Images/Image_Features_of_Items.png)
 
 
+<br>
+
+### 2. Análisis Exploratorio de Datos
 
 
-### 2. Análisis descriptivo
+En cualquier proyecto analítico, un mínimo de análisis descriptivo/exploratoria es requerido para entender el dato y decidir si es necearia alguna tecnica estadistica como la imputacion de datos faltantes, etcétera. 
 
-En cualquier proyecto analítico, un mínimo de análisis descriptivo es requerido para entender el dato y concinarlo en cuanto a valores perdidos, datos desvalanceados y otras casuísticas.
+#### 2.1 Datos Faltantes
+
+Para todos los datasets provistos por Drepessi, ninguno de ellos contiene datos faltantes, por lo que no se requiere hacer ningunta imputación por la mediana (para datos desbalanceados) o media (para datos balanceados)
+
+#### 2.1 Distribución de los datos 
+
+Para empezar, los datos de sesiones están distribuidos de la siguiente forma:
+
+* 95% para datos train
+* 5% para datos validación
+
+Representando casi 5M de registos totales. Esta cantidad es entonces un buen numero de datos para realizar un modelo de ML. Hay que tener en cuenta que con menores datos, menor informacion para el modelo.   
+
+Siguiedo con las distribuciones, podemos ver que:
+* Las compras se realizan en mayor medida durante la tarde-noche. 
+* La categorias mas comunes son la 47, 46 50 y 68. Por la cola econtramos las 9,13 y 27. Esto nos da a entender que cuanto más _común_ o _popular_ sea la caracteristica entre los items, menos determinara el objeto. Asimismo, cuanto más singular sea esa característica entre los items, más determinar el tipo de prenda/item.
+* Se observan muchos items con muchas carctristicas y muchos item con categorias muy pocas categorias
 
 
-#### 2.1 Features
 
-
-|       | item_id       | feature_category_id | feature_value_id |
-|-------|---------------|---------------------|------------------|
-| **count** | 471751 | 471751       | 471751    |
-| **min**   | 2      | 1            | 1         |
-| **max**   | 28143  | 73           | 905       |
-| **Non-Null Count** | non-null | non-null       | non-null    |
-| **Dtype**   | int64      | int64            | int64        |
-
-
-![](Images/Image_FeaturesStats.png)
-
+<br>
 
 ### 3. Primer Análisis de los Datos e Intento de Armado de Arbol de Categorías
 
@@ -104,6 +111,7 @@ Lamentablemente no se otubieron buenos resultados con este proceso, por lo cual 
 
 ![Resultado_Parcial_Arbol_de_Categorías](Images/Resultado_Parcial_Arbol_Categorías.png)
 
+<br>
 
 ### 4. Análisis de las Componentes Principales (PCA)
 
@@ -116,6 +124,7 @@ El resultado obtenido fue de 16 componentes las cuales consiguen mantener un por
 El proceso realizado en detalle y correspondiente documentación se puede en el código "PCA_Seleccion_Numero_Componentes" en el repositorio de este trabajo.
 
 
+<br>
 
 ### 5. Clustering
 
@@ -127,6 +136,7 @@ Luego de varios intentos y análisis, se obtuvo como mejor resultado un total de
 
 El detalle de esto y su correspondiente documentación se puede en el código "clustering_features" en el repositorio de este trabajo.
 
+<br>
 
 ### 6. Feature Engineering (REVISARRRRRR)
 
@@ -158,17 +168,21 @@ Por otra parte, de cada sesión se determinó:
 
 Por último, se combió todo lo anterior en un mismo dataset que, luego de algunos procesamientos más, es el utilizado como información de entrada para el entrenamiento del modelo.
 
+<br>
 
 ### 7. División en Train y Test
 
 Previo a realizar los siguientes procesamiento de los datos, se realiza la división en train y test.
 
+<br>
 
 ### 8. Preparación de los Datos para los Algoritmos de Machine Learning (REVISARRRRRR)
 
 Para poder utilizar el dataset en el entramiento del modelo, es necesario realizar una serie de procesamientos con las variables categóricas, para lo cual se realizó un Ordinal Encoder y un Pipeline
 
 COREGIRRRRRRRRRRRRRRRRR
+
+<br>
 
 ### 9. Entrenamiento y Selección del Modelo
 
@@ -185,6 +199,8 @@ Una vez entrenados todos los modelos listados, se utiliza el método de la media
 Como resultado, se determina que el mejor modelo a utilizar es el Random Forest Classifier, y con el cual se trabajó en los pasos posteriores. En la siguente tabla se resumen los resultados obtenidos:
 
 ![Resultados_Test_Modelos.PNG](Images/Resultados_Test_Modelos.PNG)
+
+<br>
 
 ### 10. Mejores Parámetros (REVISARRRRRR)
 
