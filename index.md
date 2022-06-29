@@ -6,7 +6,7 @@
 
 ### Resumen:
 
-En el presente trabajo, ajustamos un modelo (o _x_ modelos) para predecir los 100 primeros items de posibles compras para un usuario dada su sesión de visualización de items. Es importante tanto para el comprador como para el vendedor dar un recomendación ajustada a afín a sus gustos. Para ello, usamos datos provistos por esta misma compañia (podéis econtrarlos [aquí](https://www.dressipi-recsys2022.com)) para entrenar un modelo. Finalmente, veremos que el modelo que mejor predice es el Random Forest Classifier.
+En el presente trabajo, ajustamos varios algorítmos de machine learning para predecir los 100 porductos más probables a ser comprados por un usuario dada una sesión. Para ello, es importante disponer de datos de calidad para entrenar el modelo y, para que así sea, lo  datos (podéis econtrarlos [aquí](https://www.dressipi-recsys2022.com)) estan previamente validados uno por la empresa porveedora del reto. En un primer lugar, haremos un EDA básico para sacar estadísticos elementales seguidamente de un proceso de feature engineering para dar más valor al dataset (se ajusta un modelo no supervisado para clústering y se crean variables adicionales). Finalmente, aplicamos diferentes algoritmos quedándonos con un clasificador Random Forest el cual tunearemos sus hiperparámetros para justar mejor el modelo y dar mejores predicciones.
 
 
 
