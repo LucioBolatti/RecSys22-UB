@@ -130,11 +130,24 @@ El resultado obtenido fue de 16 componentes las cuales consiguen mantener un por
 
 ### 5. Clustering
 
-A partir del resultado del PCA (16 componenetes principales) de realiza un clustering de los datos con diversos métodos.
+Como hemos comentado anteriormente, una categoría puede ser cualquier atributo que defina esa parte de ese item o articulo de compra. Como solo tenemos los IDs referenciados a esa categoria (ej: color) y el valor asociado a esa categoria para ese .item (ej: rojo), no tenemos forma alguna de enteder qué es qué. En otras palabras: los IDs hacen referencia al artículo, la categoría y el valor. Para dar un poco más de valor a los datos, hemos pensado en hacer grupos de elementos. Esto lo podemos hacer mediante un proceso de aprendizaje no supervisado llamado clusterización. 
 
-Luego de varios intentos y análisis, se obtuvo como mejor resultado un total de 4 clusters, que se utilizan para los posteriores pasos. Esto se puede ver graficamente en la siguiente imagen:
 
-![Resultados_Clustering](Images/Resultados_Clustering.PNG)
+Para ello, necesitamos partir de una dataset de datos, en este caso, del de `item_features.csv`. Para ello, utilizaremos tan solo 16 componentes principales (como hemos determinado en el apartado anterior) para reducir la diemensionalidad del problema. 
+
+
+Luego de varios intentos y análisis, utilizamos el algoritmo K-means como método final de agrupamiento para dar valorar el número de grupos que mejor minimiza la varianza dentro del grupo (busca elementos parejos) y, a la vez, maximiza la heterogeneidad entre los otros grupos restantes (intenta separa aquellos items entre sí que sean diferentes). Una vez aplicado, determinamos con la _regla de codo_ que el número óptimo de grupos es de 4 tal y como se puede mostrar en la imgane
+
+![Resultados_Clustering](Images/Image_ReglaDelCodoClusters.png)
+
+Puede ser osado decir que la mejor particion es está, pues es bastante subjetivo para el analista determinarlo, pero en todo caso, no dista mucho de que proponer como numerod de clúster k = 4 puede ser un buen ajuste. 
+
+A continuación, se muestra como en dos dimensiones (con las 2 componentes pincipales) como quedarias los datos separados por 4 clústers cuando aplicamos:
+1. K-Means (imágen de la izquierda)
+2. AgglomerativeClustering (imágen del centro)
+3. G-Mixture (imágen de la derecha)
+
+![Resultados_Clustering](Images/Image_Cluster.png)
 
 >_**Nota**: Podéis encontrar más detalle con la correspondiente documentación en el siguente notebook: "clustering_features" en el repositorio de este trabajo._
 
