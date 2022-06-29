@@ -6,7 +6,7 @@
 
 ### Resumen:
 
-En el presente trabajo, ajustamos un modelo (o _x_ modelos) para predecir los 100 primeros items de posibles compras para un usuario dada su sesión de visualización de items. Es importante tanto para el comprador como para el vendedor dar un recomendación ajustada a afín a sus gustos. Para ello, usamos datos provistos por esta misma compañia (podéis econtrarlos [aquí](https://www.dressipi-recsys2022.com)) para entrenar un modelo Random Forest i un lienal como baseline.  Finalmente, veremos que el modelo que mejor predice es el Random Forest.
+En el presente trabajo, ajustamos un modelo (o _x_ modelos) para predecir los 100 primeros items de posibles compras para un usuario dada su sesión de visualización de items. Es importante tanto para el comprador como para el vendedor dar un recomendación ajustada a afín a sus gustos. Para ello, usamos datos provistos por esta misma compañia (podéis econtrarlos [aquí](https://www.dressipi-recsys2022.com)) para entrenar un modelo. Finalmente, veremos que el modelo que mejor predice es el Random Forest Classifier.
 
 
 
@@ -125,7 +125,6 @@ El resultado obtenido fue de 16 componentes las cuales consiguen mantener un por
 
 >_**Nota**: Podéis encontrar más detalle con la correspondiente documentación en el siguente notebook: "PCA_Seleccion_Numero_Componentes" en el repositorio de este trabajo._
 
-
 <br>
 
 ### 5. Clustering
@@ -134,97 +133,111 @@ A la información que se nos da de los ítems, intentamos extraer información s
 
 En primer lugar, se tiene que escoger que número de clusters es el óptimo para aplicar el método. El método del codo nos permite determinar este valor <a name="ref-2"></a>[<sup>[2]</sup>](#ref-2). Este método consiste en graficar la inercia en función del número de clusters, y ver donde se encuentra el codo - es decir, en que punto se encuentra el cambio de pendiente más notable de la curva - para determinar que valor usar.
 
-![Ejemplo caracteristicas](Images/elbow.png)
+![Regla del Codo](Images/Image_ReglaDelCodoClusters.png)
 
-Se puede ver un 'codo' con 4 clusters, por lo que ese fue el número de clusters que decidimos usar 
+Se puede ver un 'codo' con 4 clusters, por lo que ese fue el número de clusters que decidimos usar.
 
+Decidimos escoger también el mejor método de clustering, entre tres posibles métodos:
 
-Tras varios intentos y análisis, se obtuvo como mejor resultado un total de 4 clusters, que se utilizan para los posteriores pasos. Esto se puede ver graficamente en la siguiente imagen:
+- K-Means
+- Agglomerative Clustering
+- Gaussian Mixture
 
-![Resultados_Clustering](Images/Resultados_Clustering.PNG)
+Para ello, visualizamos en formato gráfico 2D (graficando los datos reducidos a 2 componentes principales) los resultados de clustering usando cada uno de los métodos y estos fueron los resultados.
+
+![Grafico Clusters](Images/Image_Cluster.png)
+
+Podemos ver como los tres métodos nos dan resultados muy parecidos. Sin embargo, vemos una diferencia en como se interpreta el grupo de puntos que se encuentra en la esquina inferior derecha. A simple ojo se puede ver como hay un grupo de puntos alargado y estrecho que tanto el Agglomerative Clustering como el Gaussian Mixture consideran que pertenece a partes iguales a dos clusters distintos. El K-Means a diferencia de los otros dos métodos considera que la gran mayoría de puntos de ese grupo como un solo cluster. Eso nos hizo decidirnos por usar el método K-Means para el clustering. Cabe remarcar que el uso de 2 componentes principales para representar un conjunto de datos de forma gráfica no es ideal para sacar conclusiones ya que solo explica el 35% de la varianza de los datos.
+
+Finalmente se ejecuta el clustering usando el método K-Means, con un 4 cluster y 16 componentes principales.
 
 >_**Nota**: Podéis encontrar más detalle con la correspondiente documentación en el siguente notebook: "clustering_features" en el repositorio de este trabajo._
 
 <br>
 
-### 6. Feature Engineering (REVISARRRRRR)
+### 6. Feature Engineering
 
 Además de la información proporcionada por el Clustering, se realizó un Feature Engineering para obtener otra información relevante para el entrenamiento del modelo.
 
 En primer lugar se tiene información determinada a criterio de los integrantes del grupo, y se trata de la siguente:
 
-- Primer producto visto en la sesión
-- Momento en el que el primer producto es visto
-- Último producto visto en la sesión
-- Momento en el que el último producto es visto
+- Primer producto visto
+- Último producto visto
+- Número total de productos vistos
+- Categoria más vista en la sesión
+- Número de categorias distintas vistas en la sesión
 - Duración total de la sesión
-- Tiempo promedio utilizado en cada producto
+- Tiempo medio dedicado a cada producto
 - Período del día en el cual la sesión comenzó (madrugada, día, tarde o noche)
 
+Por otra parte, tras la información obtenido mediante el método de clustering, de cada sesión se determinó:
 
-#### 6.1. Purchases (REVISARRRRRR)
-
-Con respecto a los datos de las compras, se extrajo el item comprado y la hora de la compra.
-
-#### 6.2. Features (REVISARRRRRR)
-
-Por otra parte, de cada sesión se determinó:
-
-- Veces que se vió cada cluster
+- Número de productos vistos para cada cluster (una columna por cluster)
 - Cluster más visto
+- Cluster al que pertenece el primer producto visto
+- Cluster al que pertenece el último producto visto
 
-#### 6.3 Combinación de todos los datos (REVISARRRRRR)
+Y así quedó el dataset final:
 
-Por último, se combió todo lo anterior en un mismo dataset que, luego de algunos procesamientos más, es el utilizado como información de entrada para el entrenamiento del modelo.
+| session_id	| first_prod | last_prod | prod_count | most_common_cat | count_num_unique_cat | time_diff | time_per_prod | time_first_prod | 0 | 1 | 2 | 3 | most_seen_cluster | first_item_cluster	| last_item_cluster |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 3	| 9655	| 9655	| 2	| 2	| 18	| 312	| 156	| noche	| 0.0	| 0.0	| 2.0 |	0.0	| 2 | 2 | 2 |
 
-<br>
+### 7. Preprocesamiento de los datos
 
-### 7. División en Train y Test
-
-Previo a realizar los siguientes procesamiento de los datos, se realiza la división en train y test.
-
-<br>
-
-### 8. Preparación de los Datos para los Algoritmos de Machine Learning (REVISARRRRRR)
-
-Para poder utilizar el dataset en el entramiento del modelo, es necesario realizar una serie de procesamientos con las variables categóricas, para lo cual se realizó un Ordinal Encoder y un Pipeline
-
-COREGIRRRRRRRRRRRRRRRRR
+Para que el modelo pueda entender las variables categóricas, es necesario codificarlas previamente, para lo cual se realizó se aplicó un One Hot Encoder. 
 
 <br>
 
-### 9. Entrenamiento y Selección del Modelo
+### 8. Entrenamiento y Selección del Modelo
 
-Una vez listo el data set, se pasó al entramiento y selección del mejor modelo. Para ello se entrenaron divsersos modelos, los cuales son:
+Una vez listo el dataset, se pasó al entrenamiento y selección del mejor modelo. Para ello se evaluaron diversos modelos:
 
-- SGD CLassifier
+- SGD Classifier
 - Decision Tree
 - K-nearest Neighbour
 - SVC
 - Random Forest Classifier
 
-Una vez entrenados todos los modelos listados, se utiliza el método de la media recíproca para determinar cual es el mejor, ya que este es el método utilizado en el chalenge.
+Probamos cada modelo utilizando el método de Mean Reciprocal Rank. Es el que se utiliza en el concurso RecSys Challenge. Esto nos ayudó a elegir el modelo más adecuado.
 
-Como resultado, se determina que el mejor modelo a utilizar es el Random Forest Classifier, y con el cual se trabajó en los pasos posteriores. En la siguente tabla se resumen los resultados obtenidos:
+**Cálculo del MRR**
 
-![Resultados_Test_Modelos.PNG](Images/Resultados_Test_Modelos.PNG)
+El rango recíproco medio (Mean Reciprocal Rank) es una medida estadística para evaluar cualquier proceso que produzca una lista de posibles respuestas a una muestra de consultas, ordenadas por probabilidad de corrección. El rango recíproco de una respuesta a una consulta es el inverso multiplicativo del rango de la primera respuesta correcta: 1 para el primer puesto, 1⁄2 para el segundo, 1⁄3 para el tercero y así sucesivamente. El rango recíproco medio es la media de los rangos recíprocos de los resultados de una muestra de consultas
+
+$$ MRR = \frac{1}{| Q |} \displaystyle\sum_{i=1}^{| Q |} \frac{1}{rank_i} $$
+
+donde $\displaystyle {\text{rank}}_{i}$ hace referencia a la posición de rango del primer documento relevante para la consulta i-ésima.
+
+**Tabla de resultados**
+
+Classifier | Number of Sessions | Mean Reciprocal Rank | Training Time |
+| --- | --- | --- | --- |
+SGD | 11172 | 0.026005918927187604 | 17s 300s |
+KNN | 11172 | 0.016126264214551485 | 200ms |
+SVC | 11172 | 0.015471577711113993 | 2min 51s 800ms |
+Decision Tree | 11172 | 0.010970834404048573 | 17s 900ms |
+Random Forest | 11172 | 0.03393014598889391 | 18s 900ms |
+
+Basándonos en los resultados que se obtuvieron para cada clasificador, podemos ver que los que obtuvieron los mejores resultados fueron el SGD Classifier y el Random Forest Classifier. El SGD Classifier y el Random Forest Classifier, si bien tienen un tiempo de entrenamiento muy parecido, difieren de forma notable en el valor del MRR. Es por eso que finalmente se optó por usar el Random Forest Classifier, al tener el MRR más elevado.
 
 <br>
 
-### 10. Mejores Parámetros (REVISARRRRRR)
+### 9. Mejores Parámetros (REVISARRRRRR)
 
 VER QUE PONER ACAAAAAA
 
-### 11. Feature Importance (REVISARRRRRR)
+### 10. Feature Importance (REVISARRRRRR)
 
 VER QUE PONER ACAAAAA
 
-### 12. Generación del archivo Test Submission (REVISARRRRRR)
+### 11. Generación del archivo Test Submission
 
-Por último, utilizando el modelo descripto y todo lo anterior, se analiza el dataset de "test_final", y se genera el archivo de entrega "final_submission", el cual es el resultado final de este trabajo.
+Por último, utilizando el modelo descripto y todo lo anterior, se analiza el dataset de "test_leaderboards_session", y se genera el archivo de entrega "final_submission", el cual es el resultado final de este trabajo.
 
+Este fue el último intento antes de entregar el trabajo (captura de la página web de la competición https://www.dressipi-recsys2022.com/)
 
-Todo esto en detalle y su correspondiente documentación se puede en el código "ALL_Joan" en el repositorio de este trabajo.
+![Ultimo resultado](Images/last_result.png)
 
 
 ## Conclusiones (REVISARRRRRR)
