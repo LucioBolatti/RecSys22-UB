@@ -185,8 +185,7 @@ Y así quedó el dataset final:
 
 ### 7. Preprocesamiento de los datos
 
-Para que el modelo pueda entender las variables categóricas, es necesario codificarlas previamente, para lo cual se realizó se aplicó un One Hot Encoder. 
-
+Para que el modelo pueda entender las variables categóricas, es necesario codificarlas previamente, para lo cual se aplicó un One Hot Encoder. 
 <br>
 
 ### 8. Entrenamiento y Selección del Modelo
