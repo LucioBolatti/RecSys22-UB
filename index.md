@@ -128,7 +128,7 @@ El resultado obtenido fue de 16 componentes las cuales consiguen mantener un por
 
 <br>
 
-### 5. Clustering
+### 5. Clústering
 
 Como hemos comentado anteriormente, una categoría puede ser cualquier atributo que defina esa parte de ese item o articulo de compra. Como solo tenemos los IDs referenciados a esa categoria (ej: color) y el valor asociado a esa categoria para ese .item (ej: rojo), no tenemos forma alguna de enteder qué es qué. En otras palabras: los IDs hacen referencia al artículo, la categoría y el valor. Para dar un poco más de valor a los datos, hemos pensado en hacer grupos de elementos. Esto lo podemos hacer mediante un proceso de aprendizaje no supervisado llamado clusterización. 
 
@@ -140,12 +140,12 @@ Luego de varios intentos y análisis, utilizamos el algoritmo K-means como méto
 
 ![Resultados_Clustering](Images/Image_ReglaDelCodoClusters.png)
 
-Puede ser osado decir que la mejor particion es está, pues es bastante subjetivo para el analista determinarlo, pero en todo caso, no dista mucho de que proponer como numerod de clúster k = 4 puede ser un buen ajuste. 
+Puede ser osado decir que la mejor partición es ésta ya que es bastante subjetivo para el analista determinarlo, pero en todo caso, no dista mucho de que proponer como número de clúster k = 4 puede ser un buen ajuste. 
 
 A continuación, se muestra como en dos dimensiones (con las 2 componentes pincipales) como quedarias los datos separados por 4 clústers cuando aplicamos:
-1. K-Means (imágen de la izquierda)
-2. AgglomerativeClustering (imágen del centro)
-3. G-Mixture (imágen de la derecha)
+1. K-Means (imagen de la izquierda)
+2. AgglomerativeClustering (imagen del centro)
+3. Gaussian-Mixture (imagen de la derecha)
 
 ![Resultados_Clustering](Images/Image_Cluster.png)
 
@@ -155,17 +155,26 @@ A continuación, se muestra como en dos dimensiones (con las 2 componentes pinci
 
 ### 6. Feature Engineering (REVISARRRRRR)
 
-Además de la información proporcionada por el Clustering, se realizó un Feature Engineering para obtener otra información relevante para el entrenamiento del modelo.
+Además de la información proporcionada por el Clustering (la cual se añadirá al dataset final) se realizó un Feature Engineering para obtener otra información relevante para el entrenamiento del modelo.
 
-En primer lugar se tiene información determinada a criterio de los integrantes del grupo, y se trata de la siguente:
+En primer lugar, se propone a criterio de los integrantes del grupo, sacar las siguientes métricas:
 
 - Primer producto visto en la sesión
 - Momento en el que el primer producto es visto
 - Último producto visto en la sesión
-- Momento en el que el último producto es visto
+- Momento en el que el último producto es 
+- Número total de productos vistos
+- Categoria mas comun de las sesion
+- Recuento único de categorias
 - Duración total de la sesión
-- Tiempo promedio utilizado en cada producto
+- Tiempo promedio de visualización en cada producto
 - Período del día en el cual la sesión comenzó (madrugada, día, tarde o noche)
+- Clúster más comun sobre los productos de la sesión
+- Clúster al que petenece el primer producto visto en la sesión
+- Clúster al que petenece el último producto visto en la sesión
+- Fecha en la que se realiza la compra
+
+Una vez sacadas estas métricas, utilizaremos este conjunto de datos como datos para entrenar el modelo. 
 
 
 #### 6.1. Purchases (REVISARRRRRR)
