@@ -73,7 +73,7 @@ En cualquier proyecto analítico, un mínimo de análisis descriptivo/explorator
 
 #### 2.1 Datos Faltantes
 
-Para todos los datasets provistos por Drepessi, ninguno de ellos contiene datos faltantes, por lo que no se requiere hacer ningunta imputación por la mediana (para datos desbalanceados) o media (para datos balanceados)
+Para todos los datasets provistos por Dressipi, ninguno de ellos contiene datos faltantes, por lo que no se requiere hacer ningunta imputación por la mediana (para datos desbalanceados) o media (para datos balanceados)
 
 #### 2.1 Distribución de los datos 
 
@@ -128,26 +128,20 @@ El resultado obtenido fue de 16 componentes las cuales consiguen mantener un por
 
 <br>
 
-### 5. Clústering
+### 5. Clustering
 
-Como hemos comentado anteriormente, una categoría puede ser cualquier atributo que defina esa parte de ese item o articulo de compra. Como solo tenemos los IDs referenciados a esa categoria (ej: color) y el valor asociado a esa categoria para ese .item (ej: rojo), no tenemos forma alguna de enteder qué es qué. En otras palabras: los IDs hacen referencia al artículo, la categoría y el valor. Para dar un poco más de valor a los datos, hemos pensado en hacer grupos de elementos. Esto lo podemos hacer mediante un proceso de aprendizaje no supervisado llamado clusterización. 
+A la información que se nos da de los ítems, intentamos extraer información sobre como podíamos agrupar los ítems, que pueda aportar valor al entrenamiento. Esto se realizó mediante un método de aprendizaje no supervisado, el clustering. En nuestro caso teníamos un conjunto de datos sobre los ítems que se venden que no estaban etiquetados. Si lo estuviesen, la agrupación se podría realizar mediante clasificación. Al no estarlo, tuvimos que encontrar las similaridades entre los distintos ítems según las categorías que presentan. Para el clustering solo tuvimos en cuenta la información sobre los ítems y categorias, pero no la información sobre los valores de las categorias. 
+
+En primer lugar, se tiene que escoger que número de clusters es el óptimo para aplicar el método. El método del codo nos permite determinar este valor <a name="ref-2"></a>[<sup>[2]</sup>](#ref-2). Este método consiste en graficar la inercia en función del número de clusters, y ver donde se encuentra el codo - es decir, en que punto se encuentra el cambio de pendiente más notable de la curva - para determinar que valor usar.
+
+![Ejemplo caracteristicas](Images/elbow.png)
+
+Se puede ver un 'codo' con 4 clusters, por lo que ese fue el número de clusters que decidimos usar 
 
 
-Para ello, necesitamos partir de una dataset de datos, en este caso, del de `item_features.csv`. Para ello, utilizaremos tan solo 16 componentes principales (como hemos determinado en el apartado anterior) para reducir la diemensionalidad del problema. 
+Tras varios intentos y análisis, se obtuvo como mejor resultado un total de 4 clusters, que se utilizan para los posteriores pasos. Esto se puede ver graficamente en la siguiente imagen:
 
-
-Luego de varios intentos y análisis, utilizamos el algoritmo K-means como método final de agrupamiento para dar valorar el número de grupos que mejor minimiza la varianza dentro del grupo (busca elementos parejos) y, a la vez, maximiza la heterogeneidad entre los otros grupos restantes (intenta separa aquellos items entre sí que sean diferentes). Una vez aplicado, determinamos con la _regla de codo_ que el número óptimo de grupos es de 4 tal y como se puede mostrar en la imgane
-
-![Resultados_Clustering](Images/Image_ReglaDelCodoClusters.png)
-
-Puede ser osado decir que la mejor partición es ésta ya que es bastante subjetivo para el analista determinarlo, pero en todo caso, no dista mucho de que proponer como número de clúster k = 4 puede ser un buen ajuste. 
-
-A continuación, se muestra como en dos dimensiones (con las 2 componentes pincipales) como quedarias los datos separados por 4 clústers cuando aplicamos:
-1. K-Means (imagen de la izquierda)
-2. AgglomerativeClustering (imagen del centro)
-3. Gaussian-Mixture (imagen de la derecha)
-
-![Resultados_Clustering](Images/Image_Cluster.png)
+![Resultados_Clustering](Images/Resultados_Clustering.PNG)
 
 >_**Nota**: Podéis encontrar más detalle con la correspondiente documentación en el siguente notebook: "clustering_features" en el repositorio de este trabajo._
 
@@ -155,26 +149,17 @@ A continuación, se muestra como en dos dimensiones (con las 2 componentes pinci
 
 ### 6. Feature Engineering (REVISARRRRRR)
 
-Además de la información proporcionada por el Clustering (la cual se añadirá al dataset final) se realizó un Feature Engineering para obtener otra información relevante para el entrenamiento del modelo.
+Además de la información proporcionada por el Clustering, se realizó un Feature Engineering para obtener otra información relevante para el entrenamiento del modelo.
 
-En primer lugar, se propone a criterio de los integrantes del grupo, sacar las siguientes métricas:
+En primer lugar se tiene información determinada a criterio de los integrantes del grupo, y se trata de la siguente:
 
 - Primer producto visto en la sesión
 - Momento en el que el primer producto es visto
 - Último producto visto en la sesión
-- Momento en el que el último producto es 
-- Número total de productos vistos
-- Categoria mas comun de las sesion
-- Recuento único de categorias
+- Momento en el que el último producto es visto
 - Duración total de la sesión
-- Tiempo promedio de visualización en cada producto
+- Tiempo promedio utilizado en cada producto
 - Período del día en el cual la sesión comenzó (madrugada, día, tarde o noche)
-- Clúster más comun sobre los productos de la sesión
-- Clúster al que petenece el primer producto visto en la sesión
-- Clúster al que petenece el último producto visto en la sesión
-- Fecha en la que se realiza la compra
-
-Una vez sacadas estas métricas, utilizaremos este conjunto de datos como datos para entrenar el modelo. 
 
 
 #### 6.1. Purchases (REVISARRRRRR)
@@ -259,6 +244,8 @@ Todo esto en detalle y su correspondiente documentación se puede en el código 
 
 
 <a name="ref-1"></a>\[1\].  [^](#ref-1) [RecSys Challenge 2022](http://www.recsyschallenge.com/2022/), Dressipi, Bruce Ferwerda (Jönköping University, Sweden), Saikishore Kalloori (ETH Zürich, Switzerland), and Abhishek Srivastava (IIM Jammu, India).
+
+<a name="ref-2"></a>\[2\].  [^](#ref-2) Kodinariya, T. M., & Makwana, P. R. (2013). Review on determining number of Cluster in K-Means Clustering. International Journal, 1(6), 90-95.
 
 
 
