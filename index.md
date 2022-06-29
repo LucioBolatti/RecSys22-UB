@@ -89,6 +89,16 @@ Siguiedo con las distribuciones, podemos ver que:
 * La categorias más comunes son la 47, 46 50 y 68. Por la cola econtramos las 9,13 y 27. Esto nos da a entender que cuanto más _común_ o _popular_ sea la caracteristica entre los items, menos determinara el objeto. Asimismo, cuanto más singular sea esa característica entre los items, más determinar el tipo de prenda/item.
 * Se observa usuarios que buscan prendas muy elaboradas (sesiones con items complejos - muchas categorias por item-) y muchos usuarios con prendas menos elabroadas, con esto podemos ver un poco el perfil del usuario para determiar un poco hacia donde van los tiros en cuanto a items a predecir.
 
+Resumen de la informacion para el conjunto de datos:
+
+| Conjunto de datos   | Filas   | # Columnas                      | Datos Faltantes |
+|---------------------|---------|-------------------------------|-----------------|
+| item_features       | 471751  | 3 (se tratan com categóricas) | 0%              |
+| train_purchases     | 1000000 | 3 (se tratan com categóricas) | 0%              |
+| test_final_sessions | 226138  | 3 (se tratan com categóricas) | 0%              |
+| train_sessions      | 4743820 | 3 (se tratan com categóricas) | 0%              |
+
+
 > *__Nota__: Podéis encontrar más detalle sobre este apartado en el notebook "1_Analisis_Exploratorio_de_Datos" en el repositorio de este trabajo.*
 
 <br>
