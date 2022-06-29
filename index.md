@@ -6,7 +6,7 @@
 
 ### Resumen:
 
-En el presente trabajo, ajustamos varios algorítmos de machine learning para predecir los 100 porductos más probables a ser comprados por un usuario dada una sesión. Para ello, es importante disponer de datos de calidad para entrenar el modelo y, para que así sea, lo  datos (podéis econtrarlos [aquí](https://www.dressipi-recsys2022.com)) estan previamente validados uno por la empresa porveedora del reto. En un primer lugar, haremos un EDA básico para sacar estadísticos elementales seguidamente de un proceso de feature engineering para dar más valor al dataset (se ajusta un modelo no supervisado para clústering y se crean variables adicionales). Finalmente, aplicamos diferentes algoritmos quedándonos con un clasificador Random Forest el cual tunearemos sus hiperparámetros para justar mejor el modelo y dar mejores predicciones.
+En el presente trabajo, ajustamos varios algorítmos de machine learning (SGD Classifier, Decision Tree, K-nearest Neighbour, SVC y Random Forest Classifier) para predecir los 100 porductos más probables a ser comprados por un usuario dada una sesión. Para ello, es importante disponer de datos de calidad para entrenar el modelo y, para que así sea, lo  datos (podéis econtrarlos [aquí](https://www.dressipi-recsys2022.com)) estan previamente validados uno por la empresa porveedora del reto. En un primer lugar, haremos un EDA básico para sacar estadísticos elementales seguidamente de un proceso de feature engineering para dar más valor al dataset (se ajusta un modelo no supervisado para clústering y se crean variables adicionales). Finalmente, aplicamos diferentes algoritmos quedándonos con un clasificador Random Forest el cual tunearemos sus hiperparámetros para justar mejor el modelo y dar mejores predicciones.
 
 
 
@@ -279,6 +279,7 @@ Este fue el último intento antes de entregar el trabajo (captura de la página 
 <br>
 
 
+<!--
 
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
@@ -309,4 +310,9 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Support or Contact
 
+
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+
+  -->
+  
