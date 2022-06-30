@@ -245,13 +245,21 @@ Basándonos en los resultados que se obtuvieron para cada clasificador, podemos 
 
 <br>
 
-### 9. Mejores Parámetros (REVISARRRRRR)
+### 9. Mejores Parámetros
 
-VER QUE PONER ACAAAAAA
+Una vez escogido el model, aplicamos el método "Grid Search" que nos ofrece la libreria SciKit Learn para encontrar los mejores parámetros del modelo.
 
-### 10. Feature Importance (REVISARRRRRR)
+Estos son los resultados que nos devuelve:
 
-VER QUE PONER ACAAAAA
+![Grid Search](Images/grid_search.png)
+
+### 10. Feature Importance
+
+Quisimos ver también cuales de las características eran más importantes para el modelo a la hora de generar la predicción, y estos fueron los resultados.
+
+![Feature Importance](Images/feature_importance.png)
+
+Se puede ver como las características que el modelo considera de más peso son la duración de la sesión, el tiempo dedicado a cada producto y el número de categorias distintas vistas en la sesión.
 
 ### 11. Generación del archivo Test Submission
 
