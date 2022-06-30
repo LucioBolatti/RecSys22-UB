@@ -206,9 +206,11 @@ Y así quedó el dataset final:
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 3	| 9655	| 9655	| 2	| 2	| 18	| 312	| 156	| noche	| 0.0	| 0.0	| 2.0 |	0.0	| 2 | 2 | 2 |
 
+Se decidió filtrar el dataset final por las sesiones con id inferior o igual a 50000, ya que sino el tiempo de entrenamiento era demasiado elevado y a menudo el ordenador con el que se entrenaba se quedaba sin memoria.
+
 ### 7. Preprocesamiento de los datos
 
-Para que el modelo pueda entender las variables categóricas, es necesario codificarlas previamente, para lo cual se aplicó un One Hot Encoder. 
+Para que el modelo pueda entender las variables categóricas, es necesario codificarlas previamente, para lo cual se aplicó un One Hot Encoder. Para las variables numéricas, se aplicó un Standard Scaler.
 <br>
 
 ### 8. Entrenamiento y Selección del Modelo
