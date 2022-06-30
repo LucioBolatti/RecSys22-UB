@@ -270,7 +270,18 @@ Este fue el último intento antes de entregar el trabajo (captura de la página 
 ![Ultimo resultado](Images/last_result.png)
 
 
-## Conclusiones (REVISARRRRRR)
+## Conclusiones
+
+El trabajo realizado presento una serie de dificultades, como algunas facilidades, que nos permitieron aplicar los conocimientos adquiridos a lo largo de este curso de posgrado.
+
+En primer lugar, se destaca el haber contado con un extenso dataset validado previamente, lo cual, de no haberlo tenido, hubiese representado una carga de trabajo significativa. Al mismo tiempo, el gran tamaño de este dataset nos obligó a idear y aplicar un pre-procesamiento al mismo, de manera tal de que sea manejable con los poderes de procesamiento de los ordenadores con los que contamos, y al mismo tiempo quitar la menor cantidad de información posible. 
+
+Por otra parte, resultó desafiante el trabajo de feature engineering, cuyo objetivo fue generar los atributos del dataset de entrada para el entrenamiento de los modelos, los cuales debían contener información valiosa y representativa del comportamiento de los datos.
+
+De esta manera, se pudo entrenar una serie de modelos, de los cuales se escogió el que mejores resultados, en base al scoring del challage, el cual también se tuvo que codificar manualmente.
+
+Todo lo descripto, además de haber sido un importante proceso de aprendizaje y trabajo en equipo, nos implicó en un proyecto de data science real de principio a fin, permitiendonos así integrar conocimientos y estar más preparados para el mundo laboral de este rubro.
+
 
 ---------------------------------------------------------------------------------------------------------------
 
