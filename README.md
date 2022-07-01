@@ -22,8 +22,11 @@ Esta carpeta contiene los códigos utilizados para la realización de este traba
 #### - dataset:
 Esta carpeta contiene los archivos con los datasets originales del chalange
 
+<!--
 #### - models:
 En esta carpeta se guardan los diversos modelos entranados en formato .sav.
+
+-->
 
 #### - online_submission:
 Esta carpeta contiene los datasets de test de la competición online y el .csv con los predicciones generadas por nuestro modelo, para subir a la competición.
